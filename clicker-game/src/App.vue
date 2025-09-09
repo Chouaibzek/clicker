@@ -81,11 +81,11 @@ function buyUpgrade(upgrade: { name: string, cost: number, level: number }) {
         @click="buyUpgrade(upgrade)"
         :class="[
           'w-full px-5 py-3 rounded-2xl font-extrabold text-lg text-center transition-all duration-200 transform shadow-lg',
-          counter.value >= upgrade.cost
+          counter.valueOf() >= upgrade.cost
             ? 'bg-green-500 hover:bg-green-600 hover:scale-105 hover:shadow-xl text-white'
             : 'bg-gray-300 text-gray-500 cursor-not-allowed opacity-70'
         ]"
-        :disabled="counter.value < upgrade.cost"
+        :disabled="counter.valueOf() < upgrade.cost"
       >
         {{ upgrade.name }} (Coût: {{ upgrade.cost }})
       </button>
